@@ -31,7 +31,7 @@ export default function Header() {
             </div>
 
             <nav className="flex gap-6 font-semibold relative">
-                <a href="/" className="hover:underline">Accueil</a>
+                <Link href="/" className="hover:underline">Accueil</Link>
                 {['Températures', 'Précipitations', 'Pollution'].map((menu) => (
                     <div className="relative" key={menu}>
                         <button onClick={() => toggleMenu(menu)}>{menu}</button>
@@ -83,7 +83,7 @@ export default function Header() {
                         </div>
                     )}
                 </div>
-                <a href="/about" className="hover:underline">À propos</a>
+                <Link href="/Apropos" className="hover:underline">À propos</Link>
             </nav>
         </header>
     );
