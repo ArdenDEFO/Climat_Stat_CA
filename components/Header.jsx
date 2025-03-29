@@ -1,10 +1,13 @@
 'use client';
+import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { setParams } from '@/utils/storeParams';
 import Link from 'next/link';
 import Image from 'next/image';
 import logo from "/public/logo.jpeg";
 
 export default function Header() {
+    const router = useRouter();
     const [activeMenu, setActiveMenu] = useState(null);
     const [selectedProvince, setSelectedProvince] = useState(null);
 
@@ -53,6 +56,10 @@ export default function Header() {
                                         {years.map((year) => (
                                             <div
                                                 key={year}
+                                                onClick={() => {
+                                                    setParams(menu, selectedProvince, year);
+                                                    router.push('/presentation');
+                                                  }}
                                                 className="hover:bg-gray-100 px-2 py-1 cursor-pointer"
                                             >
                                                 {year}
