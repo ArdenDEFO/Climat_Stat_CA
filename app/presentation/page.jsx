@@ -1,48 +1,67 @@
-// export default async function Page({ params }) {
-//     const { meteo, province, year } = params;
-
-//     const res = await fetch(
-//       `http://localhost:3000/api/data?type=${meteo}&province=${province}&year=${year}`,
-//       { cache: 'no-store' } // Ne garde pas les anciennes réponses en cache
-//     );
-
-//     const data = await res.json();
-
-//     return (
-//       <div className="max-w-5xl mx-auto p-6">
-//         <h1 className="text-2xl font-bold text-blue-800 mb-4 capitalize">
-//           Données : {meteo} - {province.replaceAll('-', ' ')} ({year})
-//         </h1>
-
-//         {data.length > 0 ? (
-//           <ul className="list-disc pl-6 text-gray-800">
-//             {data.map((item, index) => (
-//               <li key={index}>
-//                 Mois : {item.month} — Valeur : {item.value}
-//               </li>
-//             ))}
-//           </ul>
-//         ) : (
-//           <p className="text-gray-600">Aucune donnée disponible pour cette combinaison.</p>
-//         )}
-//       </div>
-//     );
-//   }
-'use client'
-import { getParams } from "@/utils/storeParams"; // nom correct du fichier
+'use client';
+import { useEffect, useState } from "react";
+import { getParams } from "@/utils/storeParams";
 
 export default function Presentation() {
-    const { menu, province, year } = getParams();
-    console.log("menu :", menu);    // "temperature"
-    console.log(province); // "quebec"
-    console.log(year);     // "2023"
+  const { menu, province, year } = getParams();
+  const [data, setData] = useState([]);
 
-    return (
-        <div>
-            Page de présentation des données
-            <p>Menu sélectionné : {menu}</p>
-            <p>Province : {province}</p>
-            <p>Année : {year}</p>
+  useEffect(() => {
+    const fetchData = async () => {
+      if (menu && province && year) {
+        const res = await fetch(`/api/getData?province=${province}&year=${year}`);
+        const json = await res.json();
+        setData(json);
+      }
+    };
+
+    fetchData();
+  }, [menu, province, year]);
+
+  return (
+    <div className="max-w-4xl mx-auto">
+      {/* ✅ Bannière avec informations */}
+      <div
+        className="h-72 w-full bg-cover bg-center rounded-b-lg shadow-md flex items-center justify-center"
+        style={{
+          backgroundImage: "url('/sun.jpg')"
+        }}
+      >
+        <div className="bg-black/50 h-full w-full flex flex-col items-center justify-center text-white text-center p-4 rounded-b-lg">
+          <h1 className="text-4xl font-bold mb-2">Présentation des Données</h1>
+          <p className="text-lg"><span className="font-semibold">Menu :</span> {menu}</p>
+          <p className="text-lg"><span className="font-semibold">Province :</span> {province}</p>
+          <p className="text-lg"><span className="font-semibold">Année :</span> {year}</p>
         </div>
-    );
+      </div>
+
+      {/* ✅ Tableau */}
+      <div className="p-6">
+        <h2 className="text-xl font-semibold mt-6 mb-3 text-gray-800">
+          Températures moyennes mensuelles :
+        </h2>
+
+        {data.length > 0 ? (
+          <table className="min-w-full border border-gray-300 shadow-sm rounded-md overflow-hidden">
+            <thead className="bg-[#28A7FA] text-white">
+              <tr>
+                <th className="py-2 px-4 text-left">Mois</th>
+                <th className="py-2 px-4 text-left">Température (°C)</th>
+              </tr>
+            </thead>
+            <tbody className="bg-white divide-y divide-gray-200">
+              {data.map((item, index) => (
+                <tr key={index}>
+                  <td className="py-2 px-4 capitalize">{item.mois}</td>
+                  <td className="py-2 px-4">{item.temperature}°C</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        ) : (
+          <p className="text-gray-600 mt-4">Chargement ou aucune donnée disponible.</p>
+        )}
+      </div>
+    </div>
+  );
 }

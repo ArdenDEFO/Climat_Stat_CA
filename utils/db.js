@@ -1,13 +1,13 @@
 import sql from 'mssql';
 
 const tempConfig = {
-  user: 'TON_UTILISATEUR',
-  password: 'TON_MOT_DE_PASSE',
-  server: 'localhost',
+  server: 'DESKTOP-J8V9QME\\SQLEXPRESS',
   database: 'TempDatabase',
+  user: 'climastat_user',
+  password: 'motdepasse123',
   options: {
-    encrypt: false,
-    trustServerCertificate: true
+    trustServerCertificate: true,
+    encrypt: false
   }
 };
 
@@ -24,7 +24,6 @@ const precipitationConfig = {
 // Pools de connexions
 let tempPool, pollutionPool, precipitationPool;
 
-// Fonctions d'accès
 export const getTempConnection = async () => {
   if (!tempPool) tempPool = await sql.connect(tempConfig);
   return tempPool;
