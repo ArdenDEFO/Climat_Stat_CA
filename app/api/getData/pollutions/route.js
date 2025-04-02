@@ -1,4 +1,4 @@
-import { getTempConnection, sql } from "@/utils/db";
+import { getPollutionConnection, sql } from "@/utils/db";
 
 export async function GET(request) {
   try {
@@ -12,14 +12,14 @@ export async function GET(request) {
       });
     }
 
-    const pool = await getTempConnection();
+    const pool = await getPollutionConnection();
 
     const result = await pool.request()
       .input("ProvinceName", sql.NVarChar, province)
       .input("Year", sql.Int, year)
-      .execute("GetMonthlyTemperatures");
+      .execute("GetMonthlyPollution");
 
-    console.log("Données récupérées :", result.recordset);
+    console.log("✅ Données pollution récupérées :", result.recordset);
 
     return new Response(JSON.stringify(result.recordset), {
       status: 200,
@@ -27,7 +27,7 @@ export async function GET(request) {
     });
 
   } catch (error) {
-    console.error("Erreur API TempData:", error);
+    console.error("❌ Erreur API Pollution :", error);
     return new Response(JSON.stringify({ error: "Erreur serveur" }), {
       status: 500,
     });
