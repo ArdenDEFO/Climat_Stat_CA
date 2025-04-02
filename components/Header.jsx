@@ -10,7 +10,7 @@ export default function Header() {
     const router = useRouter();
     const [activeMenu, setActiveMenu] = useState(null);
     const [selectedProvince, setSelectedProvince] = useState(null);
-
+    
     const toggleMenu = (menu) => {
         setActiveMenu(menu === activeMenu ? null : menu);
         setSelectedProvince(null); // reset province when switching menu
@@ -58,8 +58,17 @@ export default function Header() {
                                                 key={year}
                                                 onClick={() => {
                                                     setParams(menu, selectedProvince, year);
-                                                    router.push('/presentation');
-                                                  }}
+
+                                                    const lowerMenu = menu.toLowerCase();
+                                                    if (lowerMenu === "températures") {
+                                                        router.push('/presentation/temperatures');
+                                                    } else if (lowerMenu === "pollution") {
+                                                        router.push('/presentation/pollutions');
+                                                    } else if (lowerMenu === "précipitations") {
+                                                        router.push('/presentation/precipitations');
+                                                    }
+
+                                                }}
                                                 className="hover:bg-gray-100 px-2 py-1 cursor-pointer"
                                             >
                                                 {year}
