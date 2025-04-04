@@ -10,7 +10,7 @@ export default function Header() {
     const router = useRouter();
     const [activeMenu, setActiveMenu] = useState(null);
     const [selectedProvince, setSelectedProvince] = useState(null);
-    
+
     const toggleMenu = (menu) => {
         setActiveMenu(menu === activeMenu ? null : menu);
         setSelectedProvince(null); // reset province when switching menu
@@ -81,21 +81,23 @@ export default function Header() {
                     </div>
                 ))}
 
-                {/* Comparaison */}
+                {/* Analyse */}
                 <div className="relative">
-                    <button onClick={() => toggleMenu('Comparaison')}>Comparaison</button>
-                    {activeMenu === 'Comparaison' && (
+                    <button onClick={() => toggleMenu('Analyse')}>Analyse</button>
+                    {activeMenu === 'Analyse' && (
                         <div className="absolute bg-white text-black mt-2 p-2 rounded shadow-lg z-10 w-60">
-                            <div className="font-bold mb-2">Par mois</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Mois le plus chaud</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Mois le plus froid</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Mois le plus pollué</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Mois le moins pollué</div>
-                            <div className="font-bold mt-3 mb-2">Par province</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Province la plus chaude</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Province la plus froide</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Province la plus polluée</div>
-                            <div className="hover:bg-gray-100 px-2 py-1 cursor-pointer">Province la moins polluée</div>
+                            <div
+                                className="hover:bg-gray-100 px-2 py-1 cursor-pointer"
+                                onClick={() => router.push('/presentation/extremesTemp')}
+                            >
+                                Température
+                            </div>
+                            <div
+                                className="hover:bg-gray-100 px-2 py-1 cursor-pointer"
+                                onClick={() => router.push('/presentation/extremesPol')}
+                            >
+                                Pollution
+                            </div>
                         </div>
                     )}
                 </div>
