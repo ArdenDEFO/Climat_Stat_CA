@@ -1,6 +1,7 @@
 'use client';
 import { useRouter } from 'next/navigation';
 import { useState } from 'react';
+import { useEffect, useRef } from 'react';
 import { setParams } from '@/utils/storeParams';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -10,11 +11,28 @@ export default function Header() {
     const router = useRouter();
     const [activeMenu, setActiveMenu] = useState(null);
     const [selectedProvince, setSelectedProvince] = useState(null);
+    const navRef = useRef(null);
+
 
     const toggleMenu = (menu) => {
         setActiveMenu(menu === activeMenu ? null : menu);
         setSelectedProvince(null); // reset province when switching menu
     };
+
+    useEffect(() => { // Fonction de détection de clic en dehors du menu
+        const handleClickOutside = (event) => {
+            if (navRef.current && !navRef.current.contains(event.target)) {
+                setActiveMenu(null);
+                setSelectedProvince(null);
+            }
+        };
+
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, []);
+
 
     const provinces = [
         'Ontario', 'Québec', 'Colombie-Britannique', 'Alberta', 'Manitoba',
@@ -33,7 +51,7 @@ export default function Header() {
                 </Link>
             </div>
 
-            <nav className="flex gap-6 font-semibold relative">
+            <nav ref={navRef} className="flex gap-6 font-semibold relative">
                 <Link href="/" className="hover:underline">Accueil</Link>
                 {['Températures', 'Précipitations', 'Pollution'].map((menu) => (
                     <div className="relative" key={menu}>
