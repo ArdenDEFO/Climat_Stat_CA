@@ -9,7 +9,7 @@ export async function GET() {
 
     // Exécuter la procédure pour les provinces extrêmes
     const provinceResult = await pool.request().execute("spProvinceExtremes");
-
+    
     const moisExtremes = moisResult.recordsets[0].concat(moisResult.recordsets[1]);
     const provincesExtremes = provinceResult.recordsets[0].concat(provinceResult.recordsets[1]);
 

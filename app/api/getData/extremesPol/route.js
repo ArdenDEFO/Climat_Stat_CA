@@ -21,7 +21,7 @@ export async function GET() {
       headers: { "Content-Type": "application/json" }
     });
   } catch (error) {
-    console.error("❌ Erreur API Pollution Extrêmes :", error);
+    console.error("Erreur API Pollution Extrêmes :", error);
     return new Response(JSON.stringify({ error: "Erreur serveur" }), {
       status: 500
     });

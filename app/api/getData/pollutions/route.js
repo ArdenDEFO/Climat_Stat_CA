@@ -27,7 +27,7 @@ export async function GET(request) {
     });
 
   } catch (error) {
-    console.error("❌ Erreur API Pollution :", error);
+    console.error("Erreur API Pollution :", error);
     return new Response(JSON.stringify({ error: "Erreur serveur" }), {
       status: 500,
     });

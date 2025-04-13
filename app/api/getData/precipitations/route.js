@@ -19,7 +19,7 @@ export async function GET(request) {
       .input("Year", sql.Int, year)
       .execute("GetMonthlyPrecipitations");
 
-    console.log("📦 Données précipitations :", result.recordset);
+    console.log("Données précipitations :", result.recordset);
 
     return new Response(JSON.stringify(result.recordset), {
       status: 200,
@@ -27,7 +27,7 @@ export async function GET(request) {
     });
 
   } catch (error) {
-    console.error("❌ Erreur API PrecipData:", error);
+    console.error("Erreur API PrecipData:", error);
     return new Response(JSON.stringify({ error: "Erreur serveur" }), {
       status: 500,
     });
