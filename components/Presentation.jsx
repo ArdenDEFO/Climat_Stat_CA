@@ -6,7 +6,6 @@ export default function Presentation() {
         {/* Partie gauche */}
         <div className="bg-sky-500 text-white p-6 flex-1">
           <h2 className="text-xl font-bold mb-2">Météo Ottawa - ON</h2>
-          <p className="text-sm mb-4">18:17 | Lundi</p>
           <div className="flex items-center gap-6">
             <div className="text-center">
               <div className="text-6xl font-bold">7°</div>
@@ -39,19 +38,19 @@ export default function Presentation() {
       </div>
 
       {/* Bloc de description du site */}
-      <div className="bg-white rounded shadow p-6 text-gray-800">
-        <h3 className="text-2xl font-bold text-blue-500 mb-4">Bienvenue sur ClimaStat CA</h3>
-        <p className="mb-3">
+      <div className="bg-black/30 rounded shadow p-6 text-gray-800">
+        <h3 className="text-2xl font-bold text-blue-300 mb-4">Bienvenue sur ClimaStat CA</h3>
+        <p className="mb-3 text-white">
           <b>ClimaStat CA</b> est une plateforme qui vous donne accès aux statistiques météorologiques
-          des 13 provinces et territoires du Canada. Vous pouvez consulter :
+          des 13 provinces et territoires du Canada de 2022 à 2024. Vous pouvez consulter :
         </p>
-        <ul className="list-disc list-inside mb-3">
-          <li>Les températures mensuelles des trois dernières années</li>
-          <li>Les niveaux de pollution enregistrés dans chaque province</li>
-          <li>Les précipitations (pluie, neige) par mois et par province</li>
-          <li>Des comparaisons interactives entre provinces ou périodes</li>
+        <ul className="list-disc list-inside mb-3 mb-3 text-white">
+          <li>Les températures mensuelles de chacune des 13 provinces.</li>
+          <li>Les niveaux de pollution enregistrés dans chaque province.</li>
+          <li>Les précipitations (pluie, neige) par mois et par province.</li>
+          <li>Des comparaisons interactives entre provinces ou périodes.</li>
         </ul>
-        <p>Naviguez via le menu ci-dessus pour explorer les données en détail. Bonne visite !</p>
+        <p className="text-white">Naviguez via le menu ci-dessus pour explorer les données en détail. Bonne visite !</p>
       </div>
     </section>
     );
