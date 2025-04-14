@@ -107,7 +107,7 @@ export default function DisplayPollution() {
                 </h2>
 
                 {data.length > 0 ? (
-                    <>
+                    <div>
                         <table className="min-w-full border border-gray-300 shadow-sm rounded-md overflow-hidden">
                             <thead className="bg-[#28A7FA] text-white">
                                 <tr>
@@ -125,8 +125,8 @@ export default function DisplayPollution() {
                             </tbody>
                         </table>
 
-                        <ViewGraphic/>
-                    </>
+                        <ViewGraphic url={url}/>
+                    </div>
 
                 ) : (
                     <p className="text-gray-600 mt-4">Chargement ou aucune donnée disponible.</p>
