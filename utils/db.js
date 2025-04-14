@@ -6,8 +6,8 @@ const tempConfig = {
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
   options: {
-    trustServerCertificate: true,
-    encrypt: false
+    trustServerCertificate: false,
+    encrypt: true
   }
 };
 

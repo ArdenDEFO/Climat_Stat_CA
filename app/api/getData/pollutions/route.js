@@ -19,8 +19,6 @@ export async function GET(request) {
       .input("Year", sql.Int, year)
       .execute("GetMonthlyPollution");
 
-    console.log("✅ Données pollution récupérées :", result.recordset);
-
     return new Response(JSON.stringify(result.recordset), {
       status: 200,
       headers: { "Content-Type": "application/json" }
