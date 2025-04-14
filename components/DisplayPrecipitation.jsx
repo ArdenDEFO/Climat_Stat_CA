@@ -24,57 +24,57 @@ export default function DisplayPrecipitation() {
     const getTableauUrl = (province, year) => {
         const key = `${province.toLowerCase()}_${year}`;
         const urls = {
-            "ontario_2022": "https://public.tableau.com/views/PrcipitationsOntario2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "ontario_2023": "https://public.tableau.com/views/PrcipitationsOntario2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "ontario_2024": "https://public.tableau.com/views/PrcipitationsOntario2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2022": "https://public.tableau.com/views/PrecipitationsOntario2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2023": "https://public.tableau.com/views/PrecipitationsOntario2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2024": "https://public.tableau.com/views/PrecipitationsOntario2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "québec_2022": "https://public.tableau.com/views/PrcipitationsQubec2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "québec_2023": "https://public.tableau.com/views/PrcipitationsQubec2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "québec_2024": "https://public.tableau.com/views/PrcipitationsQubec2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2022": "https://public.tableau.com/views/PrecipitationsQuebec2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2023": "https://public.tableau.com/views/PrecipitationsQuebec2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2024": "https://public.tableau.com/views/PrecipitationsQuebec2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "colombie-britannique_2022": "https://public.tableau.com/views/PrcipitationsColombieBritanique2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "colombie-britannique_2023": "https://public.tableau.com/views/PrcipitationsColombieBritanique2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "colombie-britannique_2024": "https://public.tableau.com/views/PrcipitationsColombieBritanique2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2022": "https://public.tableau.com/views/PrecipitationsColombie-Britannique2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2023": "https://public.tableau.com/views/PrecipitationsColombie-Britannique2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2024": "https://public.tableau.com/views/PrecipitationsColombie-Britannique2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "alberta_2022": "https://public.tableau.com/views/PrcipitationsAlberta2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "alberta_2023": "https://public.tableau.com/views/PrcipitationsAlberta2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "alberta_2024": "https://public.tableau.com/views/PrcipitationsAlberta2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2022": "https://public.tableau.com/views/PrecipitationsAlberta2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2023": "https://public.tableau.com/views/PrecipitationsAlberta2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2024": "https://public.tableau.com/views/PrecipitationsAlberta2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "manitoba_2022": "https://public.tableau.com/views/PrcipitationsManitoba2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "manitoba_2023": "https://public.tableau.com/views/PrcipitationsManitoba2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "manitoba_2024": "https://public.tableau.com/views/PrcipitationsManitoba2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2022": "https://public.tableau.com/views/PrecipitationsManitoba2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2023": "https://public.tableau.com/views/PrecipitationsManitoba2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2024": "https://public.tableau.com/views/PrecipitationsManitoba2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "saskatchewan_2022": "https://public.tableau.com/views/Prcipitationssaskatchewan2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "saskatchewan_2023": "https://public.tableau.com/views/Prcipitationssaskatchewan2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "saskatchewan_2024": "https://public.tableau.com/views/Prcipitationssaskatchewan2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2022": "https://public.tableau.com/views/PrecipitationsSaskatchewan2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2023": "https://public.tableau.com/views/PrecipitationsSaskatchewan2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2024": "https://public.tableau.com/views/PrecipitationsSaskatchewan2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nouvelle-écosse_2022": "https://public.tableau.com/views/PrcipitationsNouvelle-Ecosse2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouvelle-écosse_2023": "https://public.tableau.com/views/PrcipitationsNouvelle-Ecosse2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouvelle-écosse_2024": "https://public.tableau.com/views/PrcipitationsNouvelle-Ecosse2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2022": "https://public.tableau.com/views/PrecipitationsNouvelle-Ecosse2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2023": "https://public.tableau.com/views/PrecipitationsNouvelle-Ecosse2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2024": "https://public.tableau.com/views/PrecipitationsNouvelle-Ecosse2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nouveau-brunswick_2022": "https://public.tableau.com/views/PrcipitationsNouveau-Brunswick2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouveau-brunswick_2023": "https://public.tableau.com/views/PrcipitationsNouveau-Brunswick2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouveau-brunswick_2024": "https://public.tableau.com/views/PrcipitationsNouveau-Brunswick2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2022": "https://public.tableau.com/views/PrecipitationsNouveau-Brunswick2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2023": "https://public.tableau.com/views/PrecipitationsNouveau-Brunswick2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2024": "https://public.tableau.com/views/PrecipitationsNouveau-Brunswick2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "terre-neuve-et-labrador_2022": "https://public.tableau.com/views/Prcipitationsterre-neuve-et-labrador2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "terre-neuve-et-labrador_2023": "https://public.tableau.com/views/Prcipitationsterre-neuve-et-labrador2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "terre-neuve-et-labrador_2024": "https://public.tableau.com/views/Prcipitationsterre-neuve-et-labrador2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2022": "https://public.tableau.com/views/PrecipitationsTerre-Neuve-et-Labrador2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2023": "https://public.tableau.com/views/PrecipitationsTerre-Neuve-et-Labrador2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2024": "https://public.tableau.com/views/PrecipitationsTerre-Neuve-et-Labrador2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "île-du-prince-édouard_2022": "https://public.tableau.com/views/PrcipitationsIleduprinceEdouard2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "île-du-prince-édouard_2023": "https://public.tableau.com/views/PrcipitationsIleduprinceEdouard2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "île-du-prince-édouard_2024": "https://public.tableau.com/views/PrcipitationsIleduprinceEdouard2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2022": "https://public.tableau.com/views/Precipitationsle-du-prince-Edouard2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2023": "https://public.tableau.com/views/Precipitationsle-du-prince-Edouard2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2024": "https://public.tableau.com/views/Precipitationsle-du-prince-Edouard2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "yukon_2022": "https://public.tableau.com/views/Prcipitationsyukon2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "yukon_2023": "https://public.tableau.com/views/Prcipitationsyukon2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "yukon_2024": "https://public.tableau.com/views/Prcipitationsyukon2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2022": "https://public.tableau.com/views/PrecipitationsYukon2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2023": "https://public.tableau.com/views/PrecipitationsYukon2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2024": "https://public.tableau.com/views/PrecipitationsYukon2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "territoires du nord-ouest_2022": "https://public.tableau.com/views/PrcipitationsTrritoiresduNord-ouest2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "territoires du nord-ouest_2023": "https://public.tableau.com/views/PrcipitationsTrritoiresduNord-ouest2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "territoires du nord-ouest_2024": "https://public.tableau.com/views/PrcipitationsTrritoiresduNord-ouest2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2022": "https://public.tableau.com/views/PrecipitationsTerritoiresdunord-ouest2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2023": "https://public.tableau.com/views/PrecipitationsTerritoiresdunord-ouest2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2024": "https://public.tableau.com/views/PrecipitationsTerritoiresdunord-ouest2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nunavut_2022": "https://public.tableau.com/views/PrcipitationsNunavut2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nunavut_2023": "https://public.tableau.com/views/PrcipitationsNunavut2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nunavut_2024": "https://public.tableau.com/views/PrcipitationsNunavut2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2022": "https://public.tableau.com/views/PrecipitationsNunavut2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2023": "https://public.tableau.com/views/PrecipitationsNunavut2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2024": "https://public.tableau.com/views/PrecipitationsNunavut2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
         };
 
         return urls[key] || "#"; // lien par défaut si non trouvé

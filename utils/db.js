@@ -1,10 +1,10 @@
 import sql from 'mssql';
 
 const tempConfig = {
-  server: 'DESKTOP-J8V9QME\\SQLEXPRESS',
-  database: 'TempDatabase',
-  user: 'climastat_user',
-  password: 'motdepasse123',
+  server: process.env.DB_SERVER,
+  database: process.env.DB_TEMP_DB,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
   options: {
     trustServerCertificate: true,
     encrypt: false
@@ -13,12 +13,12 @@ const tempConfig = {
 
 const pollutionConfig = {
   ...tempConfig,
-  database: 'PollutionDatabase'
+  database:  process.env.DB_POLLUTION_DB
 };
 
 const precipitationConfig = {
   ...tempConfig,
-  database: 'PrecipitationsDatabase'
+  database:  process.env.DB_PRECIPITATION_DB
 };
 
 // Pools de connexions

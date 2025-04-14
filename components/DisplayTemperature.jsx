@@ -24,57 +24,57 @@ export default function DisplayTemperature() {
     const getTableauUrl = (province, year) => {
         const key = `${province.toLowerCase()}_${year}`;
         const urls = {
-            "ontario_2022": "https://public.tableau.com/views/TempratureOttawa2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "ontario_2023": "https://public.tableau.com/views/TempratureOttawa2023/Sheet2?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "ontario_2024": "https://public.tableau.com/views/TempratureOttawa2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2022": "https://public.tableau.com/views/TemperatureOntario2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2023": "https://public.tableau.com/views/TemperatureOntario2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "ontario_2024": "https://public.tableau.com/views/TemperatureOntario2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "québec_2022": "https://public.tableau.com/views/TempratureQuebec2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "québec_2023": "https://public.tableau.com/views/TempratureQuebec2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "québec_2024": "https://public.tableau.com/views/TempratureQuebec2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2022": "https://public.tableau.com/views/TemperatureQubec2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2023": "https://public.tableau.com/views/TemperatureQubec2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "québec_2024": "https://public.tableau.com/views/TemperatureQubec2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "colombie-britannique_2022": "https://public.tableau.com/views/TempratureCB2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "colombie-britannique_2023": "https://public.tableau.com/views/TempratureCB2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "colombie-britannique_2024": "https://public.tableau.com/views/TempratureCB2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2022": "https://public.tableau.com/views/TemperatureColombie-Britannique2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2023": "https://public.tableau.com/views/TemperatureColombie-Britannique2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "colombie-britannique_2024": "https://public.tableau.com/views/TemperatureColombie-Britannique2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "alberta_2022": "https://public.tableau.com/views/TempratureAlberta2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "alberta_2023": "https://public.tableau.com/views/TempratureAlberta2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "alberta_2024": "https://public.tableau.com/views/TempratureAlberta2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2022": "https://public.tableau.com/views/TemperatureAlberta2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2023": "https://public.tableau.com/views/TemperatureAlberta2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "alberta_2024": "https://public.tableau.com/views/TemperatureAlberta2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "manitoba_2022": "https://public.tableau.com/views/TempratureManitoba2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "manitoba_2023": "https://public.tableau.com/views/TempratureManitoba2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "manitoba_2024": "https://public.tableau.com/views/TempratureManitoba2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2022": "https://public.tableau.com/views/TemperatureManitoba2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2023": "https://public.tableau.com/views/TemperatureManitoba2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "manitoba_2024": "https://public.tableau.com/views/TemperatureManitoba2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "saskatchewan_2022": "https://public.tableau.com/views/Tempraturesaskatchewan2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "saskatchewan_2023": "https://public.tableau.com/views/Tempraturesaskatchewan2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "saskatchewan_2024": "https://public.tableau.com/views/Tempraturesaskatchewan2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2022": "https://public.tableau.com/views/TemperatureSaskatchewan2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2023": "https://public.tableau.com/views/TemperatureSaskatchewan2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "saskatchewan_2024": "https://public.tableau.com/views/TemperatureSaskatchewan2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nouvelle-écosse_2022": "https://public.tableau.com/views/TempratureNouvelle-Ecosse2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouvelle-écosse_2023": "https://public.tableau.com/views/TempratureNouvelle-Ecosse2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouvelle-écosse_2024": "https://public.tableau.com/views/TempratureNouvelle-Ecosse2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2022": "https://public.tableau.com/views/TemperatureNouvelle-Ecosse2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2023": "https://public.tableau.com/views/TemperatureNouvelle-Ecosse2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouvelle-écosse_2024": "https://public.tableau.com/views/TemperatureNouvelle-Ecosse2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nouveau-brunswick_2022": "https://public.tableau.com/views/Tempraturenouveau-brunswick2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouveau-brunswick_2023": "https://public.tableau.com/views/Tempraturenouveau-brunswick2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nouveau-brunswick_2024": "https://public.tableau.com/views/Tempraturenouveau-brunswick2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2022": "https://public.tableau.com/views/TemperatureNouveau-Brunswick2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2023": "https://public.tableau.com/views/TemperatureNouveau-Brunswick2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nouveau-brunswick_2024": "https://public.tableau.com/views/TemperatureNouveau-Brunswick2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "terre-neuve-et-labrador_2022": "https://public.tableau.com/views/TempratureTerre-Neuve-et-Labrador2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "terre-neuve-et-labrador_2023": "https://public.tableau.com/views/TempratureTerre-Neuve-et-Labrador2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "terre-neuve-et-labrador_2024": "https://public.tableau.com/views/TempratureTerre-Neuve-et-Labrador2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2022": "https://public.tableau.com/views/TemperatureTerre-neuve-et-labrador2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2023": "https://public.tableau.com/views/TemperatureTerre-neuve-et-labrador2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "terre-neuve-et-labrador_2024": "https://public.tableau.com/views/TemperatureTerre-neuve-et-labrador2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "île-du-prince-édouard_2022": "https://public.tableau.com/views/Tempraturele-du-prince-Edouard2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "île-du-prince-édouard_2023": "https://public.tableau.com/views/Tempraturele-du-prince-Edouard2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "île-du-prince-édouard_2024": "https://public.tableau.com/views/Tempraturele-du-prince-Edouard2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2022": "https://public.tableau.com/views/Temperaturele-du-prince-Edouard2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2023": "https://public.tableau.com/views/Temperaturele-du-prince-Edouard2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "île-du-prince-édouard_2024": "https://public.tableau.com/views/Temperaturele-du-prince-Edouard2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "yukon_2022": "https://public.tableau.com/views/TempratureYukon2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "yukon_2023": "https://public.tableau.com/views/TempratureYukon2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "yukon_2024": "https://public.tableau.com/views/TempratureYukon2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2022": "https://public.tableau.com/views/TemperatureYukon2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2023": "https://public.tableau.com/views/TemperatureYukon2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "yukon_2024": "https://public.tableau.com/views/TemperatureYukon2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "territoires du nord-ouest_2022": "https://public.tableau.com/views/TempratureTerritoiresduNord-Ouest2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "territoires du nord-ouest_2023": "https://public.tableau.com/views/TempratureTerritoiresduNord-Ouest2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "territoires du nord-ouest_2024": "https://public.tableau.com/views/TempratureTerritoiresduNord-Ouest2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2022": "https://public.tableau.com/views/TemperatureTerritoiresdunord-ouest2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2023": "https://public.tableau.com/views/TemperatureTerritoiresdunord-ouest2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "territoires du nord-ouest_2024": "https://public.tableau.com/views/TemperatureTerritoiresdunord-ouest2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
 
-            "nunavut_2022": "https://public.tableau.com/views/TempratureNunavut2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nunavut_2023": "https://public.tableau.com/views/TempratureNunavut2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
-            "nunavut_2024": "https://public.tableau.com/views/TempratureNunavut2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2022": "https://public.tableau.com/views/TemperatureNunavut2022/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2023": "https://public.tableau.com/views/TemperatureNunavut2023/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
+            "nunavut_2024": "https://public.tableau.com/views/TemperatureNunavut2024/Sheet1?:language=fr-FR&publish=yes&:sid=&:redirect=auth&:display_count=n&:origin=viz_share_link",
         };
 
         return urls[key] || "#"; // lien par défaut si non trouvé
