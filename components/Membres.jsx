@@ -35,7 +35,7 @@ export default function Membres() {
             className="mx-auto mb-4 rounded-md shadow-md object-cover"
           />
           <h3 className="font-bold text-xl mb-2">Aurelie Tenesso</h3>
-          <p className="text-sm text-gray-600 mb-3">Développeur Front-End</p>
+          <p className="text-sm text-gray-600 mb-3">Développeuse Front-End</p>
           <p>
             Responsable de l’interface utilisateur et collecte des données.
           </p>
@@ -51,7 +51,7 @@ export default function Membres() {
             className="mx-auto mb-4 rounded-md shadow-md object-cover"
           />
           <h3 className="font-bold text-xl mb-2">Arden Defo</h3>
-          <p className="text-sm text-gray-600 mb-3">Développeuse Back-End</p>
+          <p className="text-sm text-gray-600 mb-3">Développeur Back-End</p>
           <p>
             Chargée des bases de données, des procédures stockées, des API de communication avec la base de données, de l'intégration des données météo et de l'hébergement.
           </p>
