@@ -116,6 +116,12 @@ export default function Header() {
                             >
                                 Pollution
                             </div>
+                            <div
+                                className="hover:bg-gray-100 px-2 py-1 cursor-pointer"
+                                onClick={() => router.push('/presentation/extremesPrecip')}
+                            >
+                                Précipitations
+                            </div>
                         </div>
                     )}
                 </div>
