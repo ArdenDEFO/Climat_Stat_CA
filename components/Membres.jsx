@@ -44,13 +44,13 @@ export default function Membres() {
         {/* ✅ Membre 3 */}
         <div className="bg-white text-gray-800 p-6 rounded-xl shadow-lg text-center">
           <Image
-            src="/Arden.jpg"
+            src="/Diallo.jpeg"
             alt="Arden"
             width={100}
             height={100}
             className="mx-auto mb-4 rounded-md shadow-md object-cover"
           />
-          <h3 className="font-bold text-xl mb-2">Arden Defo</h3>
+          <h3 className="font-bold text-xl mb-2">Elhadj Abdoulaye Diallo</h3>
           <p className="text-sm text-gray-600 mb-3">Développeur Back-End</p>
           <p>
             Chargée des bases de données, des procédures stockées, des API de communication avec la base de données, de l'intégration des données météo et de l'hébergement.
